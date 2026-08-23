@@ -6,10 +6,9 @@
   <title>Gallery – Hai Photography</title>
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Disable right-click + copying ONLY on gallery images -->
+  <!-- Disable copying/dragging ONLY on gallery images (but allow clicks) -->
   <style>
     img.nocopy {
-      pointer-events: none;
       user-select: none;
       -webkit-user-drag: none;
     }
@@ -35,19 +34,23 @@
 
 <div class="gallery-page">
 
-  <!-- HEADSHOTS (EMPTY) -->
+  <!-- HEADSHOTS (COMING SOON) -->
   <details class="dropdown">
     <summary>Headshots</summary>
     <div class="gallery-grid">
-      <!-- No photos yet -->
+      <div class="placeholder-card">
+        Coming soon ✨
+      </div>
     </div>
   </details>
 
-  <!-- ROBOTS (EMPTY) -->
+  <!-- ROBOTS (COMING SOON) -->
   <details class="dropdown">
     <summary>Robots</summary>
     <div class="gallery-grid">
-      <!-- No photos yet -->
+      <div class="placeholder-card">
+        Coming soon ✨
+      </div>
     </div>
   </details>
 
@@ -60,7 +63,7 @@
       <img class="gallery-img nocopy" src="assets/prom/IMG_9024.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9026.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9032.JPG">
-      <img class="gallery-img nocopy" src="assets/prom/IMG_9228.JPG">
+      <img class="gallery-img nocopy" src="assets/prom/IMG_9228.jpg">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9288.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9298.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9360.JPG">
@@ -99,7 +102,7 @@
     });
   });
 
-  // Close lightbox
+  // Close lightbox when clicking background
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) {
       lightbox.classList.remove("active");
