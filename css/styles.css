@@ -56,23 +56,6 @@ header {
   color: var(--strawberry-bold);
 }
 
-/* Buttons */
-.btn {
-  background: var(--strawberry-bold);
-  color: var(--button-text);
-  padding: 0.75rem 1.25rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  transition: 0.2s ease;
-}
-
-.btn:hover {
-  background: var(--strawberry-light);
-  transform: scale(1.03);
-}
-
 /* Gallery Page */
 .gallery-page {
   padding: 2rem;
@@ -118,9 +101,7 @@ details.dropdown[open] .gallery-grid {
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* IMPORTANT: allow clicking */
-  pointer-events: auto;
+  pointer-events: auto; /* IMPORTANT */
 }
 
 .gallery-img:hover {
@@ -132,7 +113,7 @@ details.dropdown[open] .gallery-grid {
 .placeholder-card {
   background: var(--strawberry-light);
   color: var(--matcha-dark);
-  font-family: var(--body-font); /* cleaner, matches rest of site */
+  font-family: var(--body-font);
   font-size: 1rem;
   padding: 2rem;
   border-radius: 12px;
