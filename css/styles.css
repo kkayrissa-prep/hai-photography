@@ -175,3 +175,23 @@ details.dropdown[open] .gallery-grid {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
+/* --- RESTORED SMALLER GRID LAYOUT --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem; /* tighter spacing */
+  padding: 1rem 0;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover animation */
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
