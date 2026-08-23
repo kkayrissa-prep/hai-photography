@@ -154,41 +154,20 @@ details.dropdown[open] .gallery-grid {
   margin-top: 1rem;
 }
 
-/* GALLERY GRID */
+/* --- RESTORED SMALLER GRID LAYOUT --- */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 1.5rem 0;
-}
-
-/* GALLERY IMAGES */
-.gallery-grid img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* HOVER ANIMATION */
-.gallery-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-/* --- SMALLER, MULTI-PHOTO GRID --- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
-  justify-content: center; /* centers the grid */
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
   padding: 1rem 0;
 }
 
+/* Gallery images */
 .gallery-grid img {
-  width: 200px;        /* fixed width */
-  height: auto;
+  width: 100%;
+  height: 180px;        /* forces smaller images */
+  object-fit: cover;    /* keeps them cropped nicely */
   border-radius: 12px;
-  object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
