@@ -19,14 +19,69 @@
   </ul>
 </header>
 
-<div class="landing">
+<main class="landing">
+
+  <div id="bg-photos"></div>
+
   <h1>Hai Photography</h1>
   <p>Cary, NC — Headshots & Event Photography</p>
 
-  <a href="gallery.html" class="btn">View Gallery</a>
-  <br><br>
-  <a href="contact.html" class="btn">Contact Info</a>
-</div>
+  <div class="landing-buttons">
+    <a href="gallery.html" class="btn">View Gallery</a>
+    <a href="contact.html" class="btn">Contact Info</a>
+  </div>
+
+</main>
+
+<script>
+  const photoPaths = [
+    // PROM
+    "assets/prom/IMG_9006.JPG",
+    "assets/prom/IMG_9011.JPG",
+    "assets/prom/IMG_9024.JPG",
+    "assets/prom/IMG_9026.JPG",
+    "assets/prom/IMG_9032.JPG",
+    "assets/prom/IMG_9228.JPG",
+    "assets/prom/IMG_9288.JPG",
+    "assets/prom/IMG_9298.JPG",
+    "assets/prom/IMG_9360.JPG",
+    "assets/prom/IMG_9546.JPG",
+    "assets/prom/IMG_9810.JPG",
+    "assets/prom/IMG_9919.JPG",
+    "assets/prom/IMG_9939.JPG",
+    "assets/prom/IMG_9943.JPG",
+
+    // HEADSHOTS (add later)
+    // "assets/headshots/photo1.jpg",
+
+    // ROBOTS (add later)
+    // "assets/robots/robot1.jpg",
+  ];
+
+  const bgContainer = document.getElementById("bg-photos");
+
+  const randomPhotos = photoPaths
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 5);
+
+  randomPhotos.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.classList.add("bg-photo");
+
+    const size = Math.random() * 200 + 150;
+    img.style.width = size + "px";
+
+    img.style.top = Math.random() * 80 + "%";
+    img.style.left = Math.random() * 80 + "%";
+
+    img.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
+
+    img.onerror = () => img.remove();
+
+    bgContainer.appendChild(img);
+  });
+</script>
 
 </body>
 </html>
