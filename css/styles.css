@@ -16,12 +16,18 @@
   --body-font: "Inter", sans-serif;
 }
 
+/* GLOBAL RESET */
 body {
   background: var(--bg-color);
   color: var(--text-color);
   font-family: var(--body-font);
   margin: 0;
   padding: 0;
+  text-align: center; /* FIX landing page alignment */
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -56,9 +62,48 @@ header {
   color: var(--strawberry-bold);
 }
 
+/* LANDING PAGE — FULL FIX */
+.landing {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.landing h1,
+.landing p,
+.landing a {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.btn {
+  background: var(--strawberry-bold);
+  color: var(--button-text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--strawberry-light);
+  transform: scale(1.03);
+}
+
 /* Gallery Page */
 .gallery-page {
   padding: 2rem;
+  text-align: left; /* isolate gallery so it doesn't affect landing */
 }
 
 /* Dropdown */
@@ -101,7 +146,7 @@ details.dropdown[open] .gallery-grid {
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  pointer-events: auto; /* IMPORTANT */
+  pointer-events: auto; /* allow clicking */
 }
 
 .gallery-img:hover {
@@ -168,26 +213,4 @@ details.dropdown[open] .gallery-grid {
 
 .arrow.right {
   right: 2%;
-}
-
-/* FIX landing page alignment */
-.landing {
-  width: 100%;
-  text-align: center !important;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  margin: 0 auto !important;
-  padding: 2rem 0;
-}
-
-.landing h1,
-.landing p,
-.landing a {
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
 }
