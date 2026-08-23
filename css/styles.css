@@ -1,5 +1,4 @@
 :root {
-  /* Strawberry Matcha Palette */
   --matcha-dark: #7a8450;
   --matcha-light: #b7c687;
   --cream: #e1e2c3;
@@ -7,19 +6,16 @@
   --strawberry-soft: #f8dcd9;
   --strawberry-bold: #f3bcc3;
 
-  /* Website Theme */
   --brand-color: var(--matcha-dark);
   --accent-color: var(--strawberry-bold);
   --bg-color: var(--cream);
   --text-color: #333;
   --button-text: #fff;
 
-  /* Fonts */
   --brand-font: "Playfair Display", serif;
   --body-font: "Inter", sans-serif;
 }
 
-/* Global page styling */
 body {
   background: var(--bg-color);
   color: var(--text-color);
@@ -28,7 +24,7 @@ body {
   padding: 0;
 }
 
-/* Header styling */
+/* Header */
 header {
   background: var(--matcha-light);
   padding: 1rem 2rem;
@@ -37,14 +33,12 @@ header {
   align-items: center;
 }
 
-/* Logo styling */
 .logo {
   font-family: var(--brand-font);
   color: var(--matcha-dark);
   font-size: 1.6rem;
 }
 
-/* Navigation */
 .nav-links {
   list-style: none;
   display: flex;
@@ -79,55 +73,12 @@ header {
   transform: scale(1.03);
 }
 
-/* Landing page */
-.landing {
-  text-align: center;
-  padding: 6rem 2rem;
-}
-
-.landing h1 {
-  font-family: var(--brand-font);
-  color: var(--matcha-dark);
-  font-size: 3rem;
-}
-
-.landing p {
-  font-size: 1.2rem;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-}
-
-/* Contact page */
-.contact-container {
-  max-width: 600px;
-  margin: 4rem auto;
-  background: var(--strawberry-soft);
-  padding: 2rem;
-  border-radius: 16px;
-  text-align: center;
-}
-
-.contact-container h1 {
-  font-family: var(--brand-font);
-  color: var(--matcha-dark);
-}
-
-.contact-container a {
-  color: var(--matcha-dark);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.contact-container a:hover {
-  color: var(--strawberry-bold);
-}
-
-/* Gallery page wrapper */
+/* Gallery Page */
 .gallery-page {
   padding: 2rem;
 }
 
-/* Dropdown styling */
+/* Dropdown */
 details.dropdown {
   background: var(--strawberry-soft);
   border-radius: 12px;
@@ -141,7 +92,6 @@ details.dropdown summary {
   font-size: 1.5rem;
   color: var(--matcha-dark);
   cursor: pointer;
-  outline: none;
   transition: 0.2s ease;
 }
 
@@ -149,12 +99,11 @@ details.dropdown summary:hover {
   color: var(--strawberry-bold);
 }
 
-/* Space between summary and images when open */
 details.dropdown[open] .gallery-grid {
   margin-top: 1rem;
 }
 
-/* --- RESTORED SMALLER GRID LAYOUT --- */
+/* Grid Layout */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -162,28 +111,42 @@ details.dropdown[open] .gallery-grid {
   padding: 1rem 0;
 }
 
-/* Gallery images */
-.gallery-grid img {
+/* Gallery Images */
+.gallery-img {
   width: 100%;
-  height: 180px;        /* forces smaller images */
-  object-fit: cover;    /* keeps them cropped nicely */
+  height: 180px;
+  object-fit: cover;
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* IMPORTANT: allow clicking */
+  pointer-events: auto;
 }
 
-/* Hover animation */
-.gallery-grid img:hover {
+.gallery-img:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
-/* LIGHTBOX POPUP */
+
+/* Coming Soon Placeholder */
+.placeholder-card {
+  background: var(--strawberry-light);
+  color: var(--matcha-dark);
+  font-family: var(--brand-font);
+  font-size: 1.2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* LIGHTBOX */
 .lightbox {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -202,4 +165,24 @@ details.dropdown[open] .gallery-grid {
   max-width: 90%;
   max-height: 90%;
   border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 0.5rem;
+}
+
+.arrow.left {
+  left: 2%;
+}
+
+.arrow.right {
+  right: 2%;
 }
