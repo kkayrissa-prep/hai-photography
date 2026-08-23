@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery – Hai Photography</title>
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Disable right-click and drag on images -->
+  <style>
+    img {
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+  </style>
+
+  <script>
+    // Disable right-click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
 </head>
 
 <body>
@@ -50,3 +64,21 @@
       <img src="assets/robots/robot1.jpg">
       <img src="assets/robots/robot2.jpg">
       <img src="assets/robots/robot3.jpg">
+    </div>
+  </details>
+
+  <!-- PROM PHOTOS DROPDOWN -->
+  <details class="dropdown">
+    <summary>Prom Photos</summary>
+    <div class="gallery-grid">
+      <!-- Replace these once you upload prom photos -->
+      <img src="assets/prom/prom1.jpg">
+      <img src="assets/prom/prom2.jpg">
+      <img src="assets/prom/prom3.jpg">
+    </div>
+  </details>
+
+</div>
+
+</body>
+</html>
