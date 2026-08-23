@@ -175,3 +175,25 @@ details.dropdown[open] .gallery-grid {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
+/* --- SMALLER, MULTI-PHOTO GRID --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: center; /* centers the grid */
+  gap: 1.2rem;
+  padding: 1rem 0;
+}
+
+.gallery-grid img {
+  width: 200px;        /* fixed width */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover animation */
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
