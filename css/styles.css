@@ -132,11 +132,13 @@ details.dropdown[open] .gallery-grid {
 .placeholder-card {
   background: var(--strawberry-light);
   color: var(--matcha-dark);
-  font-family: var(--brand-font);
-  font-size: 1.2rem;
+  font-family: var(--body-font); /* cleaner, matches rest of site */
+  font-size: 1rem;
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
+  border: 1px solid var(--strawberry-bold);
+  opacity: 0.9;
 }
 
 /* LIGHTBOX */
