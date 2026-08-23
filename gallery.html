@@ -15,7 +15,6 @@
   </style>
 
   <script>
-    // Disable right-click
     document.addEventListener('contextmenu', event => event.preventDefault());
   </script>
 </head>
@@ -38,9 +37,7 @@
   <details class="dropdown">
     <summary>Headshots</summary>
     <div class="gallery-grid">
-      <div class="placeholder-card">
-        Coming soon ✨
-      </div>
+      <div class="placeholder-card">Coming soon ✨</div>
     </div>
   </details>
 
@@ -48,9 +45,7 @@
   <details class="dropdown">
     <summary>Robots</summary>
     <div class="gallery-grid">
-      <div class="placeholder-card">
-        Coming soon ✨
-      </div>
+      <div class="placeholder-card">Coming soon ✨</div>
     </div>
   </details>
 
@@ -58,12 +53,16 @@
   <details class="dropdown" open>
     <summary>Prom Photos</summary>
     <div class="gallery-grid">
+
       <img class="gallery-img nocopy" src="assets/prom/IMG_9006.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9011.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9024.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9026.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9032.JPG">
-      <img class="gallery-img nocopy" src="assets/prom/IMG_9228.jpg">
+
+      <!-- FIX THIS ONE: match EXACT filename -->
+      <img class="gallery-img nocopy" src="assets/prom/IMG_9228.JPG">
+
       <img class="gallery-img nocopy" src="assets/prom/IMG_9288.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9298.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9360.JPG">
@@ -72,12 +71,13 @@
       <img class="gallery-img nocopy" src="assets/prom/IMG_9919.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9939.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9943.JPG">
+
     </div>
   </details>
 
 </div>
 
-<!-- LIGHTBOX POPUP -->
+<!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
   <img id="lightbox-img" src="">
   <div class="arrow left" id="arrow-left">&#10094;</div>
@@ -93,7 +93,6 @@
 
   let currentIndex = 0;
 
-  // Open lightbox
   images.forEach((img, index) => {
     img.addEventListener("click", () => {
       currentIndex = index;
@@ -102,14 +101,12 @@
     });
   });
 
-  // Close lightbox when clicking background
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) {
       lightbox.classList.remove("active");
     }
   });
 
-  // Arrows
   arrowLeft.addEventListener("click", (e) => {
     e.stopPropagation();
     currentIndex = (currentIndex - 1 + images.length) % images.length;
@@ -122,7 +119,6 @@
     lightboxImg.src = images[currentIndex].src;
   });
 
-  // Swipe navigation
   let startX = 0;
 
   lightbox.addEventListener("touchstart", (e) => {
@@ -142,7 +138,6 @@
     }
   });
 
-  // Zoom (tap to toggle)
   let zoomed = false;
 
   lightboxImg.addEventListener("click", (e) => {
