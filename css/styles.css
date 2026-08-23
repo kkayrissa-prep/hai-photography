@@ -146,6 +146,36 @@ header {
   text-decoration: none;
 }
 
+.gallery-page {
+  padding: 2rem;
+}
+
+/* Dropdown styling */
+.dropdown {
+  background: var(--strawberry-soft);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dropdown summary {
+  font-family: var(--brand-font);
+  font-size: 1.5rem;
+  color: var(--matcha-dark);
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown summary:hover {
+  color: var(--strawberry-bold);
+}
+
+/* Space between summary and images */
+.dropdown[open] .gallery-grid {
+  margin-top: 1rem;
+}
+
+
 .contact-container a:hover {
   color: var(--strawberry-bold);
 }
