@@ -126,3 +126,26 @@ header {
   margin-bottom: 2rem;
 }
 
+.contact-container {
+  max-width: 600px;
+  margin: 4rem auto;
+  background: var(--strawberry-soft);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.contact-container h1 {
+  font-family: var(--brand-font);
+  color: var(--matcha-dark);
+}
+
+.contact-container a {
+  color: var(--matcha-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-container a:hover {
+  color: var(--strawberry-bold);
+}
