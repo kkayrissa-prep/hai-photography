@@ -59,7 +59,6 @@
       <img class="gallery-img nocopy" src="assets/prom/IMG_9026.JPG">
       <img class="gallery-img nocopy" src="assets/prom/IMG_9032.JPG">
 
-      <!-- This file exists based on your screenshot -->
       <img class="gallery-img nocopy" src="assets/prom/IMG_9228.JPG">
 
       <img class="gallery-img nocopy" src="assets/prom/IMG_9288.JPG">
@@ -84,6 +83,11 @@
 </div>
 
 <script>
+  // AUTO-SKIP BROKEN IMAGES
+  document.querySelectorAll(".gallery-img").forEach(img => {
+    img.onerror = () => img.remove();
+  });
+
   const images = Array.from(document.querySelectorAll(".gallery-img"));
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
@@ -92,6 +96,7 @@
 
   let currentIndex = 0;
 
+  // OPEN LIGHTBOX
   images.forEach((img, index) => {
     img.addEventListener("click", () => {
       currentIndex = index;
@@ -100,12 +105,14 @@
     });
   });
 
+  // CLOSE LIGHTBOX
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) {
       lightbox.classList.remove("active");
     }
   });
 
+  // ARROWS
   arrowLeft.addEventListener("click", (e) => {
     e.stopPropagation();
     currentIndex = (currentIndex - 1 + images.length) % images.length;
@@ -118,6 +125,7 @@
     lightboxImg.src = images[currentIndex].src;
   });
 
+  // SWIPE
   let startX = 0;
 
   lightbox.addEventListener("touchstart", (e) => {
@@ -137,6 +145,7 @@
     }
   });
 
+  // ZOOM
   let zoomed = false;
 
   lightboxImg.addEventListener("click", (e) => {
