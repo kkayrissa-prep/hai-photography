@@ -169,3 +169,12 @@ details.dropdown[open] .gallery-grid {
 .arrow.right {
   right: 2%;
 }
+
+/* FIX landing page alignment */
+.landing {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
