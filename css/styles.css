@@ -170,11 +170,24 @@ details.dropdown[open] .gallery-grid {
   right: 2%;
 }
 
-/* FORCE landing page to center */
-.landing,
-.landing * {
+/* FIX landing page alignment */
+.landing {
+  width: 100%;
+  text-align: center !important;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto !important;
+  padding: 2rem 0;
+}
+
+.landing h1,
+.landing p,
+.landing a {
   text-align: center !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
-
