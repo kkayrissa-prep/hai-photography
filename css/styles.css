@@ -41,57 +41,10 @@ header {
 .logo {
   font-family: var(--brand-font);
   color: var(--matcha-dark);
-  font-size: 1.5rem;
-}
-
-.btn {
-  background: var(--strawberry-bold);
-  color: var(--button-text);
-  padding: 0.75rem 1.25rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-  transition: 0.2s ease;
-}
-
-.btn:hover {
-  background: var(--strawberry-light);
-  transform: scale(1.03);
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
-}
-
-.gallery-grid img {
-  width: 100%;
-  border-radius: 12px;
-  transition: 0.2s ease;
-}
-
-.gallery-grid img:hover {
-  outline: 4px solid var(--strawberry-light);
-  transform: scale(1.02);
-}
-
-header {
-  background: var(--matcha-light);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: var(--brand-font);
-  color: var(--matcha-dark);
   font-size: 1.6rem;
 }
 
+/* Navigation */
 .nav-links {
   list-style: none;
   display: flex;
@@ -109,6 +62,24 @@ header {
   color: var(--strawberry-bold);
 }
 
+/* Buttons */
+.btn {
+  background: var(--strawberry-bold);
+  color: var(--button-text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--strawberry-light);
+  transform: scale(1.03);
+}
+
+/* Landing page */
 .landing {
   text-align: center;
   padding: 6rem 2rem;
@@ -126,6 +97,7 @@ header {
   margin-bottom: 2rem;
 }
 
+/* Contact page */
 .contact-container {
   max-width: 600px;
   margin: 4rem auto;
@@ -146,77 +118,41 @@ header {
   text-decoration: none;
 }
 
+.contact-container a:hover {
+  color: var(--strawberry-bold);
+}
+
+/* Gallery page wrapper */
 .gallery-page {
   padding: 2rem;
 }
 
 /* Dropdown styling */
-.dropdown {
+details.dropdown {
   background: var(--strawberry-soft);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
+  border: 2px solid var(--strawberry-light);
 }
 
-.dropdown summary {
+details.dropdown summary {
   font-family: var(--brand-font);
   font-size: 1.5rem;
   color: var(--matcha-dark);
   cursor: pointer;
   outline: none;
+  transition: 0.2s ease;
 }
 
-.dropdown summary:hover {
+details.dropdown summary:hover {
   color: var(--strawberry-bold);
 }
 
-/* Space between summary and images */
-.dropdown[open] .gallery-grid {
+/* Space between summary and images when open */
+details.dropdown[open] .gallery-grid {
   margin-top: 1rem;
 }
 
-
-.contact-container a:hover {
-  color: var(--strawberry-bold);
-}
-
-/* --- GALLERY GRID --- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px 0;
-}
-
-/* --- IMAGE STYLE --- */
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* --- HOVER ANIMATION --- */
-.gallery-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
-}
-
-/* --- DROPDOWN STYLE --- */
-details.dropdown summary {
-  font-size: 1.4rem;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 10px 0;
-  color: #3a6b3a;
-}
-
-details.dropdown {
-  background: #f7e6e6;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  border: 2px solid #e5d4d4;
-}
-
+/* GALLERY GRID */
+.gallery-grid
