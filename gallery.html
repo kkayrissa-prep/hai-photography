@@ -35,18 +35,19 @@
 
 <div class="gallery-page">
 
-  <!-- HEADSHOTS -->
+  <!-- HEADSHOTS (EMPTY) -->
   <details class="dropdown">
     <summary>Headshots</summary>
     <div class="gallery-grid">
-      <img class="gallery-img nocopy" src="assets/headshots/photo1.jpg">
+      <!-- No photos yet -->
     </div>
   </details>
 
-  <!-- ROBOTS -->
+  <!-- ROBOTS (EMPTY) -->
   <details class="dropdown">
     <summary>Robots</summary>
     <div class="gallery-grid">
+      <!-- No photos yet -->
     </div>
   </details>
 
@@ -76,21 +77,76 @@
 <!-- LIGHTBOX POPUP -->
 <div id="lightbox" class="lightbox">
   <img id="lightbox-img" src="">
+  <div class="arrow left" id="arrow-left">&#10094;</div>
+  <div class="arrow right" id="arrow-right">&#10095;</div>
 </div>
 
 <script>
+  const images = Array.from(document.querySelectorAll(".gallery-img"));
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
+  const arrowLeft = document.getElementById("arrow-left");
+  const arrowRight = document.getElementById("arrow-right");
 
-  document.querySelectorAll(".gallery-img").forEach(img => {
+  let currentIndex = 0;
+
+  // Open lightbox
+  images.forEach((img, index) => {
     img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
+      currentIndex = index;
+      lightboxImg.src = images[currentIndex].src;
       lightbox.classList.add("active");
     });
   });
 
-  lightbox.addEventListener("click", () => {
-    lightbox.classList.remove("active");
+  // Close lightbox
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove("active");
+    }
+  });
+
+  // Arrows
+  arrowLeft.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  });
+
+  arrowRight.addEventListener("click", (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImg.src = images[currentIndex].src;
+  });
+
+  // Swipe navigation
+  let startX = 0;
+
+  lightbox.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  lightbox.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (diff > 50) {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    } else if (diff < -50) {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    }
+  });
+
+  // Zoom (tap to toggle)
+  let zoomed = false;
+
+  lightboxImg.addEventListener("click", (e) => {
+    e.stopPropagation();
+    zoomed = !zoomed;
+    lightboxImg.style.transform = zoomed ? "scale(2)" : "scale(1)";
+    lightboxImg.style.cursor = zoomed ? "zoom-out" : "zoom-in";
   });
 </script>
 
