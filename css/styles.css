@@ -43,3 +43,86 @@ header {
   color: var(--matcha-dark);
   font-size: 1.5rem;
 }
+
+.btn {
+  background: var(--strawberry-bold);
+  color: var(--button-text);
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--strawberry-light);
+  transform: scale(1.03);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  outline: 4px solid var(--strawberry-light);
+  transform: scale(1.02);
+}
+
+header {
+  background: var(--matcha-light);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--brand-font);
+  color: var(--matcha-dark);
+  font-size: 1.6rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--matcha-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--strawberry-bold);
+}
+
+.landing {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.landing h1 {
+  font-family: var(--brand-font);
+  color: var(--matcha-dark);
+  font-size: 3rem;
+}
+
+.landing p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
