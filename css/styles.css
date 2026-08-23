@@ -1,1 +1,21 @@
+:root {
+  /* Strawberry Matcha Palette */
+  --matcha-dark: #7a8450;
+  --matcha-light: #b7c687;
+  --cream: #e1e2c3;
+  --strawberry-light: #f9cdd5;
+  --strawberry-soft: #f8dcd9;
+  --strawberry-bold: #f3bcc3;
+
+  /* Website Theme */
+  --brand-color: var(--matcha-dark);
+  --accent-color: var(--strawberry-bold);
+  --bg-color: var(--cream);
+  --text-color: #333;
+  --button-text: #fff;
+
+  /* Fonts */
+  --brand-font: "Playfair Display", serif;
+  --body-font: "Inter", sans-serif;
+}
 
