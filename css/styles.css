@@ -154,9 +154,6 @@ details.dropdown[open] .gallery-grid {
   margin-top: 1rem;
 }
 
-/* GALLERY GRID */
-.gallery-grid
-
 /* --- INSTAGRAM / MASONRY STYLE GALLERY --- */
 .gallery-grid {
   column-count: 3;              /* number of columns */
@@ -171,7 +168,7 @@ details.dropdown[open] .gallery-grid {
   display: block;
   break-inside: avoid;          /* prevents awkward breaks */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 0 rgba(0,0,0,0); /* start with no shadow */
+  box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
 /* Hover animation */
