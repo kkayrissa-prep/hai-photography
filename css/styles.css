@@ -154,7 +154,7 @@ details.dropdown[open] .gallery-grid {
   margin-top: 1rem;
 }
 
-/* --- RESTORED GRID GALLERY (NOT MASONRY) --- */
+/* GALLERY GRID */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -162,7 +162,7 @@ details.dropdown[open] .gallery-grid {
   padding: 1.5rem 0;
 }
 
-/* Gallery images */
+/* GALLERY IMAGES */
 .gallery-grid img {
   width: 100%;
   border-radius: 12px;
@@ -170,27 +170,7 @@ details.dropdown[open] .gallery-grid {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover animation */
-.gallery-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
-/* --- RESTORED SMALLER GRID LAYOUT --- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem; /* tighter spacing */
-  padding: 1rem 0;
-}
-
-.gallery-grid img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover animation */
+/* HOVER ANIMATION */
 .gallery-grid img:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
