@@ -19,3 +19,27 @@
   --body-font: "Inter", sans-serif;
 }
 
+/* Global page styling */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+header {
+  background: var(--matcha-light);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styling */
+.logo {
+  font-family: var(--brand-font);
+  color: var(--matcha-dark);
+  font-size: 1.5rem;
+}
