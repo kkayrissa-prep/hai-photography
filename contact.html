@@ -1,56 +1,51 @@
-/* CONTACT CARD — cute clickable version */
-.contact-card {
-  background: var(--strawberry-soft);
-  border: 2px solid var(--strawberry-light);
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 500px;
-  margin: 1.5rem auto;
-  text-align: center;
-  position: relative;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Hai Photography</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
-/* Contact items */
-.contact-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
+<body>
 
-.contact-item a {
-  color: var(--matcha-dark);
-  text-decoration: none;
-  font-weight: 600;
-}
+<header>
+  <div class="logo">Hai Photography</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</header>
 
-.contact-item a:hover {
-  color: var(--strawberry-bold);
-}
+<main class="landing">
 
-.contact-icon {
-  font-size: 1.4rem;
-}
+  <h1>Contact</h1>
 
-/* Booking button */
-.booking-btn {
-  margin-top: 1rem;
-  width: 220px;
-  align-self: center;
-}
+  <div class="contact-card">
 
-/* Verified badge */
-.verified-badge {
-  background: rgba(122,132,80,0.15);
-  color: var(--matcha-dark);
-  font-weight: 700;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  border: 2px solid rgba(122,132,80,0.25);
-  display: inline-block;
-  margin: 0.5rem auto 1rem;
-  transform: rotate(-5deg);
-}
+    <div class="contact-item">
+      <span class="contact-icon">📧</span>
+      <a href="mailto:hai.photography.studios@gmail.com">
+        hai.photography.studios@gmail.com
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <span class="contact-icon">📸</span>
+      <a href="https://instagram.com/hai.photography.studios" target="_blank">
+        @hai.photography.studios
+      </a>
+    </div>
+
+    <div class="verified-badge">Verified</div>
+
+    <a href="" class="btn booking-btn">Booking Link</a>
+
+  </div>
+
+</main>
+
+</body>
+</html>
