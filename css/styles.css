@@ -6,28 +6,20 @@
   --strawberry-soft: #f8dcd9;
   --strawberry-bold: #f3bcc3;
 
-  --brand-color: var(--matcha-dark);
-  --accent-color: var(--strawberry-bold);
-  --bg-color: var(--cream);
-  --text-color: #333;
-  --button-text: #fff;
-
   --brand-font: "Playfair Display", serif;
   --body-font: "Inter", sans-serif;
 }
 
-/* GLOBAL RESET */
-body {
-  background: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--body-font);
-  margin: 0;
-  padding: 0;
-  text-align: center; /* FIX landing page alignment */
-}
-
 * {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: #333;
+  font-family: var(--body-font);
 }
 
 /* Header */
@@ -41,207 +33,94 @@ header {
 
 .logo {
   font-family: var(--brand-font);
-  color: var(--matcha-dark);
   font-size: 1.6rem;
+  color: var(--matcha-dark);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links a {
-  color: var(--matcha-dark);
   text-decoration: none;
+  color: var(--matcha-dark);
   font-weight: 500;
-  transition: 0.2s ease;
 }
 
-.nav-links a:hover {
-  color: var(--strawberry-bold);
-}
-
-/* LANDING PAGE — FULL FIX */
+/* Page container */
+.page,
 .landing {
-  width: 100%;
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 3rem 1rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 2.5rem 1.5rem;
   text-align: center;
-}
-
-.landing h1,
-.landing p,
-.landing a {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Buttons */
 .btn {
-  background: var(--strawberry-bold);
-  color: var(--button-text);
-  padding: 0.75rem 1.25rem;
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
   border-radius: 10px;
+  background: var(--strawberry-bold);
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
-  display: inline-block;
-  transition: 0.2s ease;
 }
 
-.btn:hover {
-  background: var(--strawberry-light);
-  transform: scale(1.03);
-}
-
-/* Gallery Page */
-.gallery-page {
-  padding: 2rem;
-  text-align: left; /* isolate gallery so it doesn't affect landing */
-}
-
-/* Dropdown */
-details.dropdown {
+/* Cards */
+.card {
   background: var(--strawberry-soft);
   border-radius: 12px;
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border: 2px solid var(--strawberry-light);
+  margin: 1rem 0;
 }
 
-details.dropdown summary {
-  font-family: var(--brand-font);
-  font-size: 1.5rem;
-  color: var(--matcha-dark);
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-details.dropdown summary:hover {
-  color: var(--strawberry-bold);
-}
-
-details.dropdown[open] .gallery-grid {
-  margin-top: 1rem;
-}
-
-/* Grid Layout */
-.gallery-grid {
+/* Simple grid */
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
-  padding: 1rem 0;
 }
 
-/* Gallery Images */
-.gallery-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  pointer-events: auto; /* allow clicking */
-}
-
-.gallery-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-}
-
-/* Coming Soon Placeholder */
-.placeholder-card {
-  background: var(--strawberry-light);
-  color: var(--matcha-dark);
-  font-family: var(--body-font);
-  font-size: 1rem;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  border: 1px solid var(--strawberry-bold);
-  opacity: 0.9;
-}
-
-/* LIGHTBOX */
-.lightbox {
+/* Background collage photos */
+#bg-photos {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
+  z-index: -1;
   pointer-events: none;
-  transition: 0.3s ease;
-  z-index: 9999;
+  overflow: hidden;
 }
 
-.lightbox.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-/* Arrows */
-.arrow {
+.bg-photo {
   position: absolute;
-  top: 50%;
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-  padding: 0.5rem;
+  opacity: 0.22;
+  border-radius: 10px;
+  object-fit: cover;
+  filter: blur(1px);
 }
 
-.arrow.left {
-  left: 2%;
-}
-
-.arrow.right {
-  right: 2%;
-}
-/* LANDING PAGE FINAL SPACING FIX */
+/* Landing layout fix */
 .landing {
   position: relative;
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 4rem 1rem;
+  z-index: 1;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+
   text-align: center;
-
-  z-index: 1; /* keeps content above background photos */
+  padding: 2rem;
 }
 
-.landing h1 {
-  margin: 0;
-  padding: 0;
-  font-size: 2.5rem;
-}
-
-.landing p {
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
-}
-
+/* Landing buttons */
 .landing-buttons {
   display: flex;
   flex-direction: column;
@@ -254,45 +133,7 @@ details.dropdown[open] .gallery-grid {
   text-align: center;
 }
 
-/* Background photos container */
-#bg-photos {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.bg-photo {
-  position: absolute;
-  opacity: 0.22;
-  border-radius: 12px;
-  object-fit: cover;
-  filter: blur(1px);
-}
-
-/* FULL COLLAGE BACKGROUND */
-#bg-photos {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.bg-photo {
-  position: absolute;
-  opacity: 0.22;
-  border-radius: 10px;
-  object-fit: cover;
-  filter: blur(1px);
-  transition: opacity 0.3s ease;
-}
-/* CONTACT CARD */
+/* ID Card Styling (the version before your last edit) */
 .contact-card {
   background: var(--strawberry-soft);
   border: 2px solid var(--strawberry-light);
@@ -301,9 +142,16 @@ details.dropdown[open] .gallery-grid {
   max-width: 500px;
   margin: 1.5rem auto;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+}
+
+.contact-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.contact-card ul li {
+  margin: 0.3rem 0;
 }
 
 /* Contact items */
@@ -325,7 +173,6 @@ details.dropdown[open] .gallery-grid {
   color: var(--strawberry-bold);
 }
 
-/* Icons */
 .contact-icon {
   font-size: 1.4rem;
 }
@@ -335,114 +182,4 @@ details.dropdown[open] .gallery-grid {
   margin-top: 1rem;
   width: 220px;
   align-self: center;
-}
-#bg-photos {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-}
-.landing {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-  padding: 2rem;
-}
-/* ID Card */
-.id-card {
-  background: var(--strawberry-soft);
-  border: 3px solid var(--strawberry-light);
-  border-radius: 16px;
-  padding: 2rem;
-  max-width: 480px;
-  margin: 2rem auto;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.id-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Header */
-.id-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.id-header h2 {
-  font-family: var(--brand-font);
-  color: var(--matcha-dark);
-  margin: 0;
-}
-
-.id-number {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* Fields */
-.id-body {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.id-field {
-  display: flex;
-  flex-direction: column;
-}
-
-.id-label {
-  font-weight: 700;
-  color: var(--matcha-dark);
-  margin-bottom: 0.2rem;
-}
-
-.id-value {
-  font-weight: 600;
-  color: var(--matcha-dark);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.id-value:hover {
-  color: var(--strawberry-bold);
-}
-
-/* Booking button */
-.id-booking-btn {
-  margin-top: 1.5rem;
-  width: 220px;
-  display: block;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Stamp */
-.id-stamp {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: rgba(122,132,80,0.15);
-  color: var(--matcha-dark);
-  font-weight: 700;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  transform: rotate(-10deg);
-  font-size: 0.9rem;
-  border: 2px solid rgba(122,132,80,0.25);
 }
