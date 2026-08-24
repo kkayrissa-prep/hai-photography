@@ -220,3 +220,122 @@ header {
   margin: 0.5rem auto 1rem;
   transform: rotate(-5deg);
 }
+
+/* ----------------------------- */
+/* GALLERY — DETAILS DROPDOWNS   */
+/* ----------------------------- */
+
+.gallery-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Dropdown container */
+.dropdown {
+  background: var(--strawberry-soft);
+  border: 2px solid var(--strawberry-light);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Summary button */
+.dropdown summary {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--matcha-dark);
+  cursor: pointer;
+  padding: 0.8rem;
+  border-radius: 10px;
+  list-style: none;
+}
+
+.dropdown summary:hover {
+  background: var(--strawberry-light);
+}
+
+/* Remove default arrow */
+.dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+/* When open */
+.dropdown[open] summary {
+  background: var(--strawberry-bold);
+  color: white;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+/* Placeholder card */
+.placeholder-card {
+  background: var(--cream);
+  padding: 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--matcha-dark);
+}
+
+/* Gallery images */
+.gallery-img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+}
+
+/* ----------------------------- */
+/* LIGHTBOX                      */
+/* ----------------------------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow.left {
+  left: 2rem;
+}
+
+.arrow.right {
+  right: 2rem;
+}
+
