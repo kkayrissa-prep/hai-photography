@@ -273,3 +273,22 @@ details.dropdown[open] .gallery-grid {
   filter: blur(1px);
 }
 
+/* FULL COLLAGE BACKGROUND */
+#bg-photos {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-photo {
+  position: absolute;
+  opacity: 0.22;
+  border-radius: 10px;
+  object-fit: cover;
+  filter: blur(1px);
+  transition: opacity 0.3s ease;
+}
