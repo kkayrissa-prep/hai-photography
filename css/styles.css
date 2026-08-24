@@ -358,3 +358,62 @@ details.dropdown[open] .gallery-grid {
   text-align: center;
   padding: 2rem;
 }
+/* Aesthetic Contact Card */
+.contact-card {
+  background: var(--strawberry-soft);
+  border: 3px solid var(--strawberry-light);
+  border-radius: 14px;
+  padding: 2rem;
+  max-width: 480px;
+  margin: 2rem auto;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-family: var(--body-font);
+}
+
+/* Title */
+.contact-title {
+  text-align: center;
+  font-family: var(--brand-font);
+  color: var(--matcha-dark);
+  margin-bottom: 1.5rem;
+}
+
+/* Fields */
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.field-label {
+  font-weight: 700;
+  color: var(--matcha-dark);
+  margin-bottom: 0.2rem;
+}
+
+.contact-field a {
+  color: var(--matcha-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-field a:hover {
+  color: var(--strawberry-bold);
+}
+
+/* Booking placeholder */
+.booking-placeholder {
+  color: #555;
+  font-style: italic;
+}
+
+/* Booking button */
+.booking-btn {
+  margin-top: 1.5rem;
+  width: 220px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
