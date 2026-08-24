@@ -336,3 +336,12 @@ details.dropdown[open] .gallery-grid {
   width: 220px;
   align-self: center;
 }
+#bg-photos {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
