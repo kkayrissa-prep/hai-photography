@@ -292,3 +292,47 @@ details.dropdown[open] .gallery-grid {
   filter: blur(1px);
   transition: opacity 0.3s ease;
 }
+/* CONTACT CARD */
+.contact-card {
+  background: var(--strawberry-soft);
+  border: 2px solid var(--strawberry-light);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 1.5rem auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Contact items */
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.contact-item a {
+  color: var(--matcha-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-item a:hover {
+  color: var(--strawberry-bold);
+}
+
+/* Icons */
+.contact-icon {
+  font-size: 1.4rem;
+}
+
+/* Booking button */
+.booking-btn {
+  margin-top: 1rem;
+  width: 220px;
+  align-self: center;
+}
