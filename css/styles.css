@@ -54,3 +54,39 @@
   margin: 0.5rem auto 1rem;
   transform: rotate(-5deg);
 }
+
+/* ----------------------------- */
+/* GALLERY DROPDOWN BUTTONS      */
+/* ----------------------------- */
+
+.gallery-section {
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+.gallery-toggle {
+  background: var(--matcha-light);
+  color: var(--matcha-dark);
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.2s ease;
+}
+
+.gallery-toggle:hover {
+  background: var(--matcha-dark);
+  color: #fff;
+}
+
+.gallery-content {
+  display: none;
+  margin-bottom: 2rem;
+}
+
+.gallery-content.active {
+  display: block;
+}
