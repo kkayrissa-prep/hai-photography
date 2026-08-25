@@ -1,3 +1,4 @@
+<script>
 window.addEventListener("load", () => {
   const bgPhotos = document.querySelectorAll('.bg-photo');
 
@@ -8,24 +9,25 @@ window.addEventListener("load", () => {
 
     let tries = 0;
     do {
-      // Safe zones
       top = Math.random() * (75 - 25) + 25;   // 25% to 75%
       left = Math.random() * (80 - 10) + 10;  // 10% to 80%
 
       tries++;
-      if (tries > 40) break; // fail-safe
+      if (tries > 40) break;
     } while (
       usedPositions.some(pos =>
-        Math.abs(pos.top - top) < 10 && Math.abs(pos.left - left) < 10
+        Math.abs(pos.top - top) < 10 &&
+        Math.abs(pos.left - left) < 10
       )
     );
 
     usedPositions.push({ top, left });
 
-    const rotation = (Math.random() * 30) - 15; // -15° to +15°
+    const rotation = (Math.random() * 30) - 15;
 
     img.style.top = `${top}%`;
     img.style.left = `${left}%`;
     img.style.transform = `rotate(${rotation}deg)`;
   });
 });
+</script>
