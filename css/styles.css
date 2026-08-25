@@ -91,10 +91,15 @@ header {
 
 .bg-photo {
   position: absolute;
+  width: 180px;      /* fixed cute size */
+  height: auto;
   opacity: 0.22;
   border-radius: 10px;
   object-fit: cover;
   filter: blur(1px);
+  pointer-events: none;
+}
+
 }
 
 /* Landing layout fix */
