@@ -38,29 +38,31 @@
 </main>
 
 <script>
-  // Spread background photos, avoid header, avoid overlap, limit rotation
+// Randomized background photos with spacing, no overlap, no header collision
 const bgPhotos = document.querySelectorAll('.bg-photo');
 
-bgPhotos.forEach((img, index) => {
-  // Define safe zones
-  const safeTopMin = 18;   // no photos above 18% (keeps them out of header)
-  const safeTopMax = 85;   // bottom limit
-  const safeLeftMin = 5;
-  const safeLeftMax = 90;
+const usedPositions = [];
 
-  // Create a grid so photos don't overlap
-  const cols = 3;
-  const rows = Math.ceil(bgPhotos.length / cols);
+bgPhotos.forEach((img) => {
+  let top, left;
 
-  const col = index % cols;
-  const row = Math.floor(index / cols);
+  // Try random positions until one doesn't overlap previous photos
+  let tries = 0;
+  do {
+    top = Math.random() * (78 - 22) + 22;   // safe zone: 22% to 78%
+    left = Math.random() * (80 - 10) + 10;  // safe zone: 10% to 80%
 
-  // Spread evenly
-  const top = safeTopMin + row * ((safeTopMax - safeTopMin) / rows);
-  const left = safeLeftMin + col * ((safeLeftMax - safeLeftMin) / (cols - 1));
+    tries++;
+    if (tries > 50) break; // fail-safe
+  } while (
+    usedPositions.some(pos =>
+      Math.abs(pos.top - top) < 12 && Math.abs(pos.left - left) < 12
+    )
+  );
 
-  // Limit rotation
-  const rotation = (Math.random() * 30) - 15; // -15 to +15 degrees
+  usedPositions.push({ top, left });
+
+  const rotation = (Math.random() * 30) - 15; // -15° to +15°
 
   img.style.top = `${top}%`;
   img.style.left = `${left}%`;
