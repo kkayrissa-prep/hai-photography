@@ -43,5 +43,36 @@
   </a>
 </footer>
 
+<script>
+window.addEventListener("load", () => {
+  const photos = document.querySelectorAll(".bg-photo");
+  const used = [];
+
+  photos.forEach(img => {
+    let top, left, tries = 0;
+
+    do {
+      top = Math.random() * (75 - 25) + 25;
+      left = Math.random() * (80 - 10) + 10;
+      tries++;
+      if (tries > 40) break;
+    } while (
+      used.some(pos =>
+        Math.abs(pos.top - top) < 10 &&
+        Math.abs(pos.left - left) < 10
+      )
+    );
+
+    used.push({ top, left });
+
+    const rot = (Math.random() * 30) - 15;
+
+    img.style.top = `${top}%`;
+    img.style.left = `${left}%`;
+    img.style.transform = `rotate(${rot}deg)`;
+  });
+});
+</script>
+
 </body>
 </html>
