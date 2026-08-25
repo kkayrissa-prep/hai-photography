@@ -306,13 +306,17 @@ header {
 
 .site-footer {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   padding: 2rem 0;
   margin-top: 3rem;
+  position: relative;
+  z-index: 10;
 }
 
 .site-footer .btn {
   width: 240px;
   text-align: center;
+  display: inline-block;
 }
