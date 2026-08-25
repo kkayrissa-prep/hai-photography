@@ -457,3 +457,8 @@ header {
 .arrow.right {
   right: 2rem;
 }
+/* Prevent background photos from touching header */
+header {
+  position: relative;
+  z-index: 10;
+}
