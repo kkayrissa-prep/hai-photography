@@ -86,7 +86,7 @@ header {
 
 .bg-photo {
   position: absolute;
-  width: 160px;
+  width: 140px;     /* smaller = easier spacing */
   height: auto;
   opacity: 0.22;
   border-radius: 10px;
