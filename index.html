@@ -10,11 +10,11 @@
 <body>
 
 <div id="bg-photos">
-  <img class="bg-photo p1" src="assets/prom/IMG_9006.JPG" alt="">
-  <img class="bg-photo p2" src="assets/prom/IMG_9011.JPG" alt="">
-  <img class="bg-photo p3" src="assets/prom/IMG_9024.JPG" alt="">
-  <img class="bg-photo p4" src="assets/prom/IMG_9228.JPG" alt="">
-  <img class="bg-photo p5" src="assets/prom/IMG_9288.JPG" alt="">
+  <img class="bg-photo" src="assets/prom/IMG_9006.JPG" alt="">
+  <img class="bg-photo" src="assets/prom/IMG_9011.JPG" alt="">
+  <img class="bg-photo" src="assets/prom/IMG_9024.JPG" alt="">
+  <img class="bg-photo" src="assets/prom/IMG_9228.JPG" alt="">
+  <img class="bg-photo" src="assets/prom/IMG_9288.JPG" alt="">
 </div>
 
 <header>
@@ -36,6 +36,37 @@
     <a href="contact.html" class="btn">Contact Info</a>
   </div>
 </main>
+
+<script>
+window.addEventListener("load", () => {
+  const photos = document.querySelectorAll(".bg-photo");
+  const used = [];
+
+  photos.forEach(img => {
+    let top, left, tries = 0;
+
+    do {
+      top = Math.random() * (75 - 25) + 25;   // safe zone
+      left = Math.random() * (80 - 10) + 10;  // safe zone
+      tries++;
+      if (tries > 40) break;
+    } while (
+      used.some(pos =>
+        Math.abs(pos.top - top) < 10 &&
+        Math.abs(pos.left - left) < 10
+      )
+    );
+
+    used.push({ top, left });
+
+    const rot = (Math.random() * 30) - 15;
+
+    img.style.top = `${top}%`;
+    img.style.left = `${left}%`;
+    img.style.transform = `rotate(${rot}deg)`;
+  });
+});
+</script>
 
 </body>
 </html>
