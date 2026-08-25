@@ -38,23 +38,35 @@
 </main>
 
 <script>
-  // Spread background photos, limit rotation to ±15°
-  const bgPhotos = document.querySelectorAll('.bg-photo');
-  bgPhotos.forEach((img, index) => {
-    const cols = 3;
-    const rows = Math.ceil(bgPhotos.length / cols);
-    const col = index % cols;
-    const row = Math.floor(index / cols);
+  // Spread background photos, avoid header, avoid overlap, limit rotation
+const bgPhotos = document.querySelectorAll('.bg-photo');
 
-    const top = 10 + row * (70 / rows);   // spread vertically
-    const left = 5 + col * (90 / (cols - 1)); // spread horizontally
+bgPhotos.forEach((img, index) => {
+  // Define safe zones
+  const safeTopMin = 18;   // no photos above 18% (keeps them out of header)
+  const safeTopMax = 85;   // bottom limit
+  const safeLeftMin = 5;
+  const safeLeftMax = 90;
 
-    const rotation = (Math.random() * 30) - 15; // -15 to +15
+  // Create a grid so photos don't overlap
+  const cols = 3;
+  const rows = Math.ceil(bgPhotos.length / cols);
 
-    img.style.top = top + '%';
-    img.style.left = left + '%';
-    img.style.transform = `rotate(${rotation}deg)`;
-  });
+  const col = index % cols;
+  const row = Math.floor(index / cols);
+
+  // Spread evenly
+  const top = safeTopMin + row * ((safeTopMax - safeTopMin) / rows);
+  const left = safeLeftMin + col * ((safeLeftMax - safeLeftMin) / (cols - 1));
+
+  // Limit rotation
+  const rotation = (Math.random() * 30) - 15; // -15 to +15 degrees
+
+  img.style.top = `${top}%`;
+  img.style.left = `${left}%`;
+  img.style.transform = `rotate(${rotation}deg)`;
+});
+
 </script>
 
 </body>
