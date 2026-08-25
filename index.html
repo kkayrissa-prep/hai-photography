@@ -9,6 +9,14 @@
 
 <body>
 
+<div id="bg-photos">
+  <img class="bg-photo" src="assets/prom/IMG_9006.JPG" alt="">
+  <img class="bg-photo" src="assets/prom/IMG_9011.JPG" alt="">
+  <img class="bg-photo" src="assets/prom/IMG_9024.JPG" alt="">
+  <img class="bg-photo" src="assets/prom/IMG_9228.JPG" alt="">
+  <img class="bg-photo" src="assets/prom/IMG_9288.JPG" alt="">
+</div>
+
 <header>
   <div class="logo">Hai Photography</div>
   <ul class="nav-links">
@@ -20,9 +28,6 @@
 </header>
 
 <main class="landing">
-
-  <div id="bg-photos"></div>
-
   <h1>Hai Photography</h1>
   <p>Cary, NC — Headshots & Event Photography</p>
 
@@ -30,109 +35,27 @@
     <a href="gallery.html" class="btn">View Gallery</a>
     <a href="contact.html" class="btn">Contact Info</a>
   </div>
-
 </main>
 
 <script>
-  const photoPaths = [
-    "assets/prom/IMG_9006.JPG",
-    "assets/prom/IMG_9011.JPG",
-    "assets/prom/IMG_9024.JPG",
-    "assets/prom/IMG_9026.JPG",
-    "assets/prom/IMG_9032.JPG",
-    "assets/prom/IMG_9228.JPG",
-    "assets/prom/IMG_9288.JPG",
-    "assets/prom/IMG_9298.JPG",
-    "assets/prom/IMG_9360.JPG",
-    "assets/prom/IMG_9546.JPG",
-    "assets/prom/IMG_9810.JPG",
-    "assets/prom/IMG_9919.JPG",
-    "assets/prom/IMG_9939.JPG",
-    "assets/prom/IMG_9943.JPG"
-  ];
+  // Spread background photos, limit rotation to ±15°
+  const bgPhotos = document.querySelectorAll('.bg-photo');
+  bgPhotos.forEach((img, index) => {
+    const cols = 3;
+    const rows = Math.ceil(bgPhotos.length / cols);
+    const col = index % cols;
+    const row = Math.floor(index / cols);
 
-  const bgContainer = document.getElementById("bg-photos");
+    const top = 10 + row * (70 / rows);   // spread vertically
+    const left = 5 + col * (90 / (cols - 1)); // spread horizontally
 
-  const randomPhotos = photoPaths
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 5);
+    const rotation = (Math.random() * 30) - 15; // -15 to +15
 
-  randomPhotos.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.classList.add("bg-photo");
-
-    const size = Math.random() * 200 + 150;
-    img.style.width = size + "px";
-
-    img.style.top = Math.random() * 80 + "%";
-    img.style.left = Math.random() * 80 + "%";
-
-    img.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
-
-    img.onerror = () => img.remove();
-
-    bgContainer.appendChild(img);
+    img.style.top = top + '%';
+    img.style.left = left + '%';
+    img.style.transform = `rotate(${rotation}deg)`;
   });
 </script>
 
 </body>
 </html>
-<script>
-  const photoPaths = [
-    // PROM
-    "assets/prom/IMG_9006.JPG",
-    "assets/prom/IMG_9011.JPG",
-    "assets/prom/IMG_9024.JPG",
-    "assets/prom/IMG_9026.JPG",
-    "assets/prom/IMG_9032.JPG",
-    "assets/prom/IMG_9228.JPG",
-    "assets/prom/IMG_9288.JPG",
-    "assets/prom/IMG_9298.JPG",
-    "assets/prom/IMG_9360.JPG",
-    "assets/prom/IMG_9546.JPG",
-    "assets/prom/IMG_9810.JPG",
-    "assets/prom/IMG_9919.JPG",
-    "assets/prom/IMG_9939.JPG",
-    "assets/prom/IMG_9943.JPG",
-
-    // HEADSHOTS
-    "assets/headshots/photo1.jpg",
-    "assets/headshots/photo2.jpg",
-    "assets/headshots/photo3.jpg",
-
-    // ROBOTS
-    "assets/robots/robot1.jpg",
-    "assets/robots/robot2.jpg",
-    "assets/robots/robot3.jpg"
-  ];
-
-  const bgContainer = document.getElementById("bg-photos");
-
-  // Pick 20 random photos
-  const randomPhotos = photoPaths
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 20);
-
-  randomPhotos.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.classList.add("bg-photo");
-
-    // Random size (small to medium)
-    const size = Math.random() * 180 + 120; // 120–300px
-    img.style.width = size + "px";
-
-    // Random position across entire page
-    img.style.top = Math.random() * 100 + "%";
-    img.style.left = Math.random() * 100 + "%";
-
-    // Random rotation
-    img.style.transform = `rotate(${Math.random() * 50 - 25}deg)`;
-
-    // Remove broken images
-    img.onerror = () => img.remove();
-
-    bgContainer.appendChild(img);
-  });
-</script>
