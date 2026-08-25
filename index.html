@@ -1,33 +1,42 @@
-<script>
-window.addEventListener("load", () => {
-  const bgPhotos = document.querySelectorAll('.bg-photo');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hai Photography</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
-  const usedPositions = [];
+<body>
 
-  bgPhotos.forEach((img) => {
-    let top, left;
+<!-- Background photos (CSS handles placement) -->
+<div id="bg-photos">
+  <img class="bg-photo p1" src="assets/prom/IMG_9006.JPG" alt="">
+  <img class="bg-photo p2" src="assets/prom/IMG_9011.JPG" alt="">
+  <img class="bg-photo p3" src="assets/prom/IMG_9024.JPG" alt="">
+  <img class="bg-photo p4" src="assets/prom/IMG_9228.JPG" alt="">
+  <img class="bg-photo p5" src="assets/prom/IMG_9288.JPG" alt="">
+</div>
 
-    let tries = 0;
-    do {
-      top = Math.random() * (75 - 25) + 25;   // 25% to 75%
-      left = Math.random() * (80 - 10) + 10;  // 10% to 80%
+<header>
+  <div class="logo">Hai Photography</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</header>
 
-      tries++;
-      if (tries > 40) break;
-    } while (
-      usedPositions.some(pos =>
-        Math.abs(pos.top - top) < 10 &&
-        Math.abs(pos.left - left) < 10
-      )
-    );
+<main class="landing">
+  <h1>Hai Photography</h1>
+  <p>Cary, NC — Headshots & Event Photography</p>
 
-    usedPositions.push({ top, left });
+  <div class="landing-buttons">
+    <a href="gallery.html" class="btn">View Gallery</a>
+    <a href="contact.html" class="btn">Contact Info</a>
+  </div>
+</main>
 
-    const rotation = (Math.random() * 30) - 15;
-
-    img.style.top = `${top}%`;
-    img.style.left = `${left}%`;
-    img.style.transform = `rotate(${rotation}deg)`;
-  });
-});
-</script>
+</body>
+</html>
